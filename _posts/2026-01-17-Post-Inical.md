@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Meu primeiro post"
-date: 2026-01-18 10:00:00 -0300
+date: 2026-01-17 10:00:00 -0300
 categories: [pessoal]
 tags: [introdução, exemplo]
 excerpt: "Primeiro post do meu blog usando Jekyll e GitHub Pages."
