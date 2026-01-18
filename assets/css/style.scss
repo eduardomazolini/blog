@@ -87,3 +87,25 @@ pre, code {
   box-shadow: 0 6px 18px rgba(2,6,23,0.25);
   font-size: 1rem;
 }
+
+/* Espaçamento entre itens da navegação */
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav-item {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+/* Se quiser um separador visual em telas grandes */
+@media (min-width: 640px) {
+  .site-nav-item + .site-nav-item {
+    padding-left: 1rem;
+    border-left: 1px solid var(--border);
+    margin-left: 1rem;
+  }
+}
