@@ -27,8 +27,9 @@ paginate: 5
 theme_mode: dark
 
 plugins:
-  - jekyll-feed
   - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-sitemap
 
 
 comments:
