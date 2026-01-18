@@ -10,7 +10,7 @@ github:
   username: eduardomazolini 
 social:
   name: Eduardo Mazolini
-  email: edaurdo@mazolini.com.br
+  email: eduardo@mazolini.com.br
   links:
     - https://github.com/eduardomazolini
     - https://www.facebook.com/emazolini
@@ -31,6 +31,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-include-cache
+  - jekyll-seo-tag
 
 comments:
   # Global switch for the post-comment system. Keeping it empty means disabled.
