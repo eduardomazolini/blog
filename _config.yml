@@ -6,6 +6,7 @@ tagline: "Meu blog Pessoal"
 description: "Blog pessoal — Jekyll + GitHub Pages"
 baseurl: ""
 url: "https://blog2.mazolini.com.br"
+avatar: https://github.com/eduardomazolini.png
 github:
   username: eduardomazolini 
 social:
