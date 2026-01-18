@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/sidebar.css' | relative_url }}">
+  </head>
+  <body>
+    {% include header.html %}
+
+    <div class="site-main container">
+      <aside class="site-sidebar" role="complementary">
+        {% include sidebar.html %}
+      </aside>
+
+      <main class="site-content" role="main">
+        {{ content }}
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrapper">
+        © {{ site.time | date: "%Y" }} — {{ site.title }}
+      </div>
+    </footer>
+
+    <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/sidebar.js' | relative_url }}"></script>
+    <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  </body>
+</html>
