@@ -1,11 +1,47 @@
+# https://github.com/cotes2020/chirpy-starter/blob/main/_config.yml
+
 title: "Blog do Mazolini"
 email: "eduardo@mazolini.com.br"
+tagline: "Meu blog Pessoal"
 description: "Blog pessoal — Jekyll + GitHub Pages"
-baseurl: ""          # deixar vazio: o site será servido no root do domínio customizado
-url: "https://blog2.mazolini.com.br" # domínio de teste (mude para blog.mazolini.com.br quando migrar)
-theme: minima
+baseurl: ""
+url: "https://blog2.mazolini.com.br"
+github:
+  username: eduardomazolini 
+social:
+  name: Eduardo Mazolini
+  email: edaurdo@mazolini.com.br
+  links:
+    - https://github.com/eduardomazolini
+    - https://www.facebook.com/emazolini
+    - https://www.linkedin.com/in/mazolini
+
+theme: jekyll-theme-chirpy
+lang: pt-BR
+timezone: America/Sao_Paulo
+
 paginate: 5
 
-# Configurações opcionais
+theme_mode: dark
+
 plugins:
   - jekyll-feed
+
+
+comments:
+  # Global switch for the post-comment system. Keeping it empty means disabled.
+  provider: giscus
+
+  giscus:
+    repo: eduardomazolini/blog
+    repo_id: R_kgDOQ78wOg
+    category: Comments
+    category_id: DIC_kwDOQ78wOs4C1HSk
+    lang: pt
+    reactions_enabled: 1
+    mapping: pathname
+    strict: 0
+    emit-metadata: 0
+    input-position: top
+    theme: preferred_color_scheme
+    loading: lazy
