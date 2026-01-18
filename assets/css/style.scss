@@ -13,17 +13,7 @@
   --border: #e6edf3;
 }
 
-/* Tema escuro via classe .dark */
-.dark {
-  --bg: #0b1220;
-  --text: #e6edf3;
-  --muted: #94a3b8;
-  --link: #58a6ff;
-  --code-bg: #071024;
-  --border: #122433;
-}
-
-/* Respeita preferência do sistema */
+/* Preferência do sistema: aplica dark se o SO estiver em dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0b1220;
@@ -35,21 +25,47 @@
   }
 }
 
+/* Escolha explícita do usuário (tem prioridade porque vem depois) */
+/* Quando o root/html tem a classe 'dark' */
+:root.dark,
+html.dark {
+  --bg: #0b1220;
+  --text: #e6edf3;
+  --muted: #94a3b8;
+  --link: #58a6ff;
+  --code-bg: #071024;
+  --border: #122433;
+}
+
+/* Quando o root/html tem a classe 'light' */
+:root.light,
+html.light {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --link: #0366d6;
+  --code-bg: #f6f8fa;
+  --border: #e6edf3;
+}
+
 /* Aplicando variáveis ao documento */
 body {
   background: var(--bg);
   color: var(--text);
 }
 
+/* Ajustes para o tema minima */
+.site-header, .site-footer, .wrapper {
+  background: transparent;
+}
+
+/* Links, hr, code */
 a {
   color: var(--link);
 }
-
 hr {
   border-color: var(--border);
 }
-
-/* Código / blocos */
 pre, code {
   background: var(--code-bg);
   color: var(--text);
@@ -60,7 +76,7 @@ pre, code {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.04);
   color: var(--text);
   border: 1px solid var(--border);
   padding: .4rem .6rem;
