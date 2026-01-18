@@ -16,6 +16,8 @@ social:
     - https://www.facebook.com/emazolini
     - https://www.linkedin.com/in/mazolini
 
+theme: jekyll-theme-chirpy
+
 remote_theme: cotes2020/jekyll-theme-chirpy
 
 lang: pt-BR
