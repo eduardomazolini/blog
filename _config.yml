@@ -1,0 +1,11 @@
+title: "Blog do Mazolini"
+email: "eduardo@mazolini.com.br"
+description: "Blog pessoal — Jekyll + GitHub Pages"
+baseurl: ""          # deixar vazio: o site será servido no root do domínio customizado
+url: "https://blog2.mazolini.com.br" # domínio de teste (mude para blog.mazolini.com.br quando migrar)
+theme: minima
+paginate: 5
+
+# Configurações opcionais
+plugins:
+  - jekyll-feed
