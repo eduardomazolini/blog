@@ -1,0 +1,15 @@
+- type: github
+  icon: "fab fa-github"
+
+- type: email
+  icon: "fas fa-envelope"
+  noblank: true # open link in current tab
+
+
+- type: mastodon
+  icon: 'fab fa-mastodon' # icons powered by <https://fontawesome.com/>
+  url:  'https://socorro.social/@emazolini' # Fill with your Mastodon account page, rel="me" will be applied for verification
+
+- type: rss
+  icon: "fas fa-rss"
+  noblank: true

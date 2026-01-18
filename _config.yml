@@ -27,15 +27,6 @@ github:
 email: "eduardo@mazolini.com.br"
 
 
-#theme_mode: dark
-
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-include-cache
-  - jekyll-seo-tag
-
 social:
   name: Eduardo Mazolini
   email: eduardo@mazolini.com.br
