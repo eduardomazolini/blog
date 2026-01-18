@@ -1,0 +1,19 @@
+---
+layout: none
+permalink: /search.json
+---
+[
+{% assign first = true %}
+{% for post in site.posts %}
+  {% unless post.draft %}
+    {% if first %}{% assign first = false %}{% else %},{% endif %}
+    {
+      "title": {{ post.title | jsonify }},
+      "url": {{ post.url | relative_url | jsonify }},
+      "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      "tags": {{ post.tags | jsonify }},
+      "content": {{ post.content | strip_html | strip_newlines | strip | truncate: 300 | jsonify }}
+    }
+  {% endunless %}
+{% endfor %}
+]
