@@ -12,17 +12,17 @@
       1) permalink igual a /about/
       2) título igual a "Sobre"
       {%- endcomment -%}
-      {% assign about_page = site.pages | where: "permalink", "/about/" | first %}
-      {% if about_page == nil %}
-        {% assign about_page = site.pages | where: "title", "Sobre" | first %}
-      {% endif %}
-      {% if about_page %}
+      {% raw %}{% assign about_page = site.pages | where: "permalink", "/about/" | first %}{% endraw %}
+      {% raw %}{% if about_page == nil %}{% endraw %}
+        {% raw %}{% assign about_page = site.pages | where: "title", "Sobre" | first %}{% endraw %}
+      {% raw %}{% endif %}{% endraw %}
+      {% raw %}{% if about_page %}{% endraw %}
         <a class="site-nav-item" href="{{ about_page.url | relative_url }}">Sobre</a>
-      {% endif %}
+      {% raw %}{% endif %}{% endraw %}
     </nav>
 
     <!-- botão de alternância (include) -->
-    {% include dark-toggle.html %}
+    {% raw %}{% include dark-toggle.html %}{% endraw %}
   </div>
 </header>
 
