@@ -7,8 +7,23 @@ description: "Blog pessoal — Jekyll + GitHub Pages"
 baseurl: ""
 url: "https://blog2.mazolini.com.br"
 avatar: https://github.com/eduardomazolini.png
+
+
+defaults:
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
 github:
   username: eduardomazolini 
+
 social:
   name: Eduardo Mazolini
   email: eduardo@mazolini.com.br
