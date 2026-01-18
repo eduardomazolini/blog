@@ -18,7 +18,6 @@ social:
 
 remote_theme: cotes2020/jekyll-theme-chirpy
 
-
 lang: pt-BR
 timezone: America/Sao_Paulo
 
@@ -30,7 +29,8 @@ plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
-
+  - jekyll-paginate
+  - jekyll-include-cache
 
 comments:
   # Global switch for the post-comment system. Keeping it empty means disabled.
