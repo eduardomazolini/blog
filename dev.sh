@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 0. Limpa
+rm -Rf _site/ .bundle/ .jekyll-cache/ Gemfile.lock
+
 # 1. Gera a imagem local (apenas uma vez)
 podman build -t jekyll-trixie .
 
