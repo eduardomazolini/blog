@@ -1,0 +1,5 @@
+{% if page.show_alert %}
+  <div class="alert alert-warning">
+    {{ page.alert_text | default: "Alerta padrão" }}
+  </div>
+{% endif %}

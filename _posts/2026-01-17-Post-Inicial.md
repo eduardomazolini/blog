@@ -6,9 +6,13 @@ categories: [pessoal]
 tags: [introdução, exemplo]
 excerpt: "Primeiro post do meu blog usando Jekyll e GitHub Pages."
 comments: true
+
+show_alert: true
+alert_text: "Conteúdo gerado por lógica Liquid"
+
 ---
 
-Este é um post de exemplo em Markdown.
+# Este é um post de exemplo em Markdown.
 
 - Código:
 
@@ -16,5 +20,62 @@ Este é um post de exemplo em Markdown.
 console.log("Olá, Mazolini!");
 ```
 
-- Para imagens, coloque em `assets/images/` e referencie com: `![alt](/assets/images/minha-imagem.png)`
+- Para imagens, coloque em `assets/images/` e referencie com: `![alt](/assets/images/jekyll.jpeg)`
+
+![Logo do Jekyll](/assets/images/jekyll.jpeg)
+
+
+# A seguir sintax liquid
+
+```liquid
+{% raw %}{% include alert-warning.html %}{% endraw %}
+```
+
+
+{% include alert-warning.html %}
+
+## Algumas variáveis
+
+site
+```
+{% raw %}{{ site | jsonify }}{% endraw %}
+
+{{ site | jsonify }}
+```
+
+layout
+```
+{% raw %}{{ layout | inspect }}{% endraw %}
+```
+---
+
+{{ layout | inspect }}
+
+---
+
+page
+```
+{% raw %}{{ page | jsonify }}{% endraw %}
+{{ page | jsonify }}
+```
+
+site.posts[0]
+```
+{% raw %}{{ site.posts[0] | jsonify }}{% endraw %}
+{{ site.posts[0] | jsonify }}
+```
+
+jekyll
+```
+{{ jekyll | jsonify }}
+```
+
+content
+```
+{{ content }}
+```
+
+paginator (se ativo)
+```
+{{ paginator }}
 ```

@@ -31,6 +31,7 @@ social:
   name: Eduardo Mazolini
   email: eduardo@mazolini.com.br
   links:
+    - https://socorro.social/@emazolini
     - https://github.com/eduardomazolini
     - https://www.facebook.com/emazolini
     - https://www.linkedin.com/in/mazolini
@@ -149,6 +150,9 @@ exclude:
   - purgecss.js
   - "*.config.js"
   - "package*.json"
+  - CNAME
+  - dev.sh
+  - Dockerfile
 
 jekyll-archives:
   enabled: [categories, tags]
