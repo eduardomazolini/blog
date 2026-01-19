@@ -79,8 +79,3 @@ paginator (se ativo)
 ```
 {{ paginator }}
 ```
-
-site.data.origin[type]['lazy-polyfill'].css
-```
-{{ site.data.origin[type]['lazy-polyfill'].css | relative_url }}
-```
