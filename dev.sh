@@ -12,4 +12,4 @@ podman run --rm -it \
   -v "$PWD:/srv/jekyll:Z" \
   --userns=keep-id \
   jekyll-trixie \
-  bash -c "bundle install && bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling"
+  bash -c "bundle install && JEKYLL_ENV=production bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling"

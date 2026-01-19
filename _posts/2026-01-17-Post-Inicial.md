@@ -28,11 +28,11 @@ console.log("Olá, Mazolini!");
 # A seguir sintax liquid
 
 ```liquid
-{% raw %}{% include alert-warning.html %}{% endraw %}
+{% raw %}{% include alert-warning.md %}{% endraw %}
 ```
 
 
-{% include alert-warning.html %}
+{% include alert-warning.md %}
 
 ## Algumas variáveis
 
@@ -78,4 +78,9 @@ content
 paginator (se ativo)
 ```
 {{ paginator }}
+```
+
+site.data.origin[type]['lazy-polyfill'].css
+```
+{{ site.data.origin[type]['lazy-polyfill'].css | relative_url }}
 ```
