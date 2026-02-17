@@ -1,4 +1,3 @@
-```markdown
 # blog (Jekyll starter)
 
 Este repositório contém um site Jekyll mínimo pronto para publicar no GitHub Pages com domínio customizado.
@@ -18,4 +17,28 @@ Testar localmente:
 
 Migração para domínio final:
 - Quando quiser usar `blog.mazolini.com.br`, atualize o arquivo `CNAME` para conter `blog.mazolini.com.br` e atualize o CNAME no DNS.
+
+
 ```
+podman build -t jekyll-trixie .
+```
+
+```
+podman run --rm -it \
+  -p 4000:4000 \
+  -v "$PWD:/srv/jekyll:Z" \
+  --userns=keep-id \
+  -e BUNDLE_PATH=/srv/jekyll/.vendor/bundle \
+  -e GEM_HOME=/srv/jekyll/.vendor/bundle \
+  localhost/jekyll-trixie:latest \
+  bash -c "bundle lock --add-platform x86_64-linux && bundle install && bundle exec jekyll serve --watch --force_polling --host 0.0.0.0"
+```
+
+podman run --rm -it \
+   -p 4000:4000   \
+   -v "$PWD:/srv/jekyll:Z" \
+   --userns=keep-id \
+   -e BUNDLE_PATH=/srv/jekyll/.vendor/bundle \
+   -e GEM_HOME=/srv/jekyll/.vendor/bundle \
+   docker.io/jekyll/jekyll \
+   bash -c "bundle install && bundle exec jekyll serve --watch --force_polling"
