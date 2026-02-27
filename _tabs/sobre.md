@@ -71,7 +71,9 @@ Inglês
 
 **Interaxa** de 1/11/2012 até 31/01/2014 como Analista de Produtos.
 
-    Investigação de problemas de rede e VoIP. Implantação de Gateways AudioCodes. Suporte e Desenvolvimento na plataforma Genesys.
+- Investigação de problemas de rede e VoIP.
+- Implantação de Gateways AudioCodes.
+- Suporte e Desenvolvimento na plataforma Genesys.
 
 **Fidelity** de 1/07/2010 até 22/10/2012 como Analista de Telecomunicações Senior.
 
