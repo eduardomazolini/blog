@@ -1,6 +1,7 @@
 ---
-
-tags: [linux, debian]
+tags:
+  - debian
+  - linux
 ---
 
 # Meu pós-instalação do Debian
