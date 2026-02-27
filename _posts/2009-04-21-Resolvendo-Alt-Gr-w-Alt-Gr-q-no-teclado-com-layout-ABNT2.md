@@ -31,5 +31,12 @@ Se vc não tiver usando outros softwares pra configurar sua console sugiro troca
 ## Atualização 2026
 
 Eu to comprando um teclado ergonômico e fui procurar algumas soluções.
-Também to usando o tinkpad e apesar dele ter uma tecla ao lado do alt gr de /? ela não funciona.
 Então vou deixar uma dica aqui [Kanata](https://github.com/jtroo/kanata).
+
+Também to usando o ThinkPad e apesar dele ter uma tecla ao lado do alt gr de `/?` ela não funciona, essa tecla é reconhecida como `KEY_RIGHTCTRL`.
+
+Eu arrumei a tecla criando o arquivo `/etc/udev/hwdb.d/90-teclado-abnt2-fix.hwdb`:
+```
+evdev:input:b*v*p*e*
+ KEYBOARD_KEY_9d=ro
+```
