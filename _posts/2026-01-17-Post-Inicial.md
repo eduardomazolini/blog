@@ -14,6 +14,10 @@ alert_text: "Conteúdo gerado por lógica Liquid"
 
 # Este é um post de exemplo em Markdown.
 
+Eu vou manter o exemplo abaixo até pra lembrar quando publiquei este blog usando essa tecnologia.
+Eu vim do Blogger e to migrando as postagens para cá.
+
+
 - Código:
 
 ```js
