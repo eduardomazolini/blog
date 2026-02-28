@@ -22,7 +22,7 @@ Eu guardo minhas ISOs em um NFS que não fica no servidor mas está montado nele
 Baixe o arquivo da sua distribuição, observe que eu usei genericcloud e extensão raw.
   
   
-    wget https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-genericcloud-amd64.raw
+    wget https://cloud.debian.org/img/cloud/bookworm/latest/debian-12-genericcloud-amd64.raw
   
 
 

@@ -6,7 +6,7 @@ Como usar (resumo):
 1. Clone/adicione estes arquivos ao repo `eduardomazolini/blog`.
 2. Ajuste o arquivo `CNAME` (já presente) se precisar mudar o domínio.
 3. Faça push para a branch `main`.
-4. Configure DNS: crie um registro CNAME para `blog2` apontando para `eduardomazolini.github.io`.
+4. Configure DNS: crie um registro CNAME para `blog` apontando para `eduardomazolini.github.io`.
 5. Em Settings → Pages do repositório, escolha a source `main` / root (se necessário) e aguarde o certificado HTTPS.
 
 Testar localmente:

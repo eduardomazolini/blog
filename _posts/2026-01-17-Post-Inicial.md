@@ -14,8 +14,13 @@ alert_text: "Conteúdo gerado por lógica Liquid"
 
 # Este é um post de exemplo em Markdown.
 
-Eu vou manter o exemplo abaixo até pra lembrar quando publiquei este blog usando essa tecnologia.
+Eu vou manter o exemplo abaixo. Quero lembrar quando publiquei este blog, usando essa tecnologia.
 Eu vim do Blogger e to migrando as postagens para cá.
+Eu usei favicon usando na dica do site deste thema.
+
+![Meu favicon](/assets/img/edu.svg)
+
+![Meu favicon](/assets/img/edu-1024.png)
 
 
 - Código:
@@ -24,9 +29,9 @@ Eu vim do Blogger e to migrando as postagens para cá.
 console.log("Olá, Mazolini!");
 ```
 
-- Para imagens, coloque em `assets/images/` e referencie com: `![alt](/assets/images/jekyll.jpeg)`
+- Para imagens, coloque em `assets/img/` e referencie com: `![alt](/assets/img/jekyll.jpeg)`
 
-![Logo do Jekyll](/assets/images/jekyll.jpeg)
+![Logo do Jekyll](/assets/img/jekyll.jpeg)
 
 
 # A seguir sintax liquid

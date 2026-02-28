@@ -22,11 +22,11 @@ Estou divulgando o que pode ser visto por qualquer leigo.
 
 
 
-![](/assets/images/assistente1.PNG)
+![](/assets/img/assistente1.PNG)
 
 Na tela seguinte a esta você será questionado a concordar com os termos e o roteador vai entrar em contato com a Intelbras para se registrar no Facebook. Ou seja o pulo do gato do registro no Facebook não esta no roteador.
 
-![](/assets/images/assistente2.PNG)
+![](/assets/img/assistente2.PNG)
 
 É nesta o que esta ocorrendo por trás é um **POST** para:
 https://facebooklogin.intelbras.com.br/bridge.php usando content-type Application/x-www-form-urlencoded e no form os seguintes campos:
@@ -40,7 +40,7 @@ Retorno é id (GW_ID) e secret
 
 Agora com uma identificação no Facebook o usuário vai abrir a tela de configuração e o roteador vai ficar perguntando pro Facebook se ela já foi salva.
 
-![](/assets/images/assistente4.PNG)
+![](/assets/img/assistente4.PNG)
 
 Aqui o que está ocorrendo é um GET para:
 
@@ -62,7 +62,7 @@ O usuário faz a configuração na URL:
 
 **https://www.facebook.com/wifiauth/config?gw_id=xxxxxxxx ;**
 
-![](/assets/images/facebook1.png)
+![](/assets/img/facebook1.png)
 
 Aqui a configuração esta terminada.
 
@@ -171,7 +171,7 @@ Se alguém souber como salvar o /var por linha de comando me avisa por favor.
 
 A covardia do Facebook com os outros desenvolvedores
 
-![](/assets/images/facebook2.PNG)
+![](/assets/img/facebook2.PNG)
 
 A tela do Facebook que o desenvolvedor normal pode redireciona o usuário não funciona no navegador que o celular Moto G, por exemplo, abre pra autenticação de Hotspot.
 

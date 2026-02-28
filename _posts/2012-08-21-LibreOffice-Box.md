@@ -9,13 +9,13 @@ Mas no site em português o link esta quebrado, com a ajuda do google achei os a
 Na data de publicação deste post o Libre Office estava na versão 3.5 mas o BOX ainda na 3.3.
 
 Capa:
-http://wiki.documentfoundation.org/images/0/0a/Capa_boxdvd_regular.svg
+http://wiki.documentfoundation.org/img/0/0a/Capa_boxdvd_regular.svg
 
 Etiqueta:
-http://wiki.documentfoundation.org/images/d/d0/Etiqueta_boxdvd.svg
+http://wiki.documentfoundation.org/img/d/d0/Etiqueta_boxdvd.svg
 
 Manual:
-http://wiki.documentfoundation.org/images/3/3e/0100GS3-GuiadoIniciante-ptbr.pdf
+http://wiki.documentfoundation.org/img/3/3e/0100GS3-GuiadoIniciante-ptbr.pdf
 
 Parabéns para os autores e tradutores, uma boa iniciativa. 
 

@@ -19,7 +19,7 @@ description: "Blog pessoal — Jekyll + GitHub Pages"  # used by seo meta and th
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://blog2.mazolini.com.br"
+url: "https://blog.mazolini.com.br"
 
 github:
   username: eduardomazolini # change to your GitHub username

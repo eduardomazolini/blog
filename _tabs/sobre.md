@@ -6,7 +6,7 @@ order: 4
 ---
 # José Eduardo Constantino Mazolini
 
-![Foto Eduardo](/assets/images/edu3x4.jpg)
+![Foto Eduardo](/assets/img/edu3x4.jpg)
 
 
 44 anos
@@ -29,10 +29,10 @@ Curso de Eletrotécnica, na ETE Bento Quirino de Campinas. (1996/01) abandonado 
 ## Certificações
 
 [CompTIA Convergence+](http://certification.comptia.org/convergence/default.aspx)
-![](/assets/images/comptia_convergence.jpg)
+![](/assets/img/comptia_convergence.jpg)
 
 [Avaya Certified Expert (ACE) IP Telephony](https://www.avaya-learning.com/portal/content_public/preportal/NavPages/what_is_certification.asp)
-![](/assets/images/avaya_ace.jpg)
+![](/assets/img/avaya_ace.jpg)
 
 ## Conhecimentos produtos Avaya
 

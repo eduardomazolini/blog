@@ -15,30 +15,30 @@ Estou divulgando o que pode ser visto por qualquer leigo.
 
 ## Processo de Registro
 
-![](/assets/images/assistente1.PNG)
+![](/assets/img/assistente1.PNG)
 
 Na tela seguinte a esta você será questionado a concordar com os termos e o roteador vai entrar em contato com a Intelbras para se registrar no Facebook. Ou seja o pulo do gato do registro no Facebook não esta no roteador.
 
 
-![](/assets/images/assistente2.png)
+![](/assets/img/assistente2.png)
 
 
 É nesta o que esta ocorrendo por trás é um **POST** para:
 
-![](/assets/images/censurado.jpg)
+![](/assets/img/censurado.jpg)
 
 Agora com uma identificação no Facebook o usuário vai abrir a tela de configuração e o roteador vai ficar perguntando pro Facebook se ela já foi salva.
 
-![](/assets/images/assistente4.PNG)
+![](/assets/img/assistente4.PNG)
 
 Aqui o que está ocorrendo é um GET para:
 
-![](/assets/images/censurado.jpg)
+![](/assets/img/censurado.jpg)
 
 O usuário faz a configuração na URL:
 https://www.facebook.com/wifiauth/config?gw_id=xxxxxxxx
 
-![](/assets/images/facebook1.png)
+![](/assets/img/facebook1.png)
 
 Aqui a configuração esta terminada.
 
@@ -73,13 +73,13 @@ Depois que o cliente volta o roteador confirma com o Facebook usando o token ou 
 
 Veja o roteador confirmando com POST:
 
-![](/assets/images/censurado.jpg)
+![](/assets/img/censurado.jpg)
 
 Então a cada 5 minutos ele verifica se o usuário pode continuar e envia para o Facebook também a quantidade de dados que o usuário consumiu.
 
 Veja o roteador enviando report com POST:
 
-![](/assets/images/censurado.jpg)
+![](/assets/img/censurado.jpg)
 
 ## Sobre os arquivos e regras
 
@@ -137,7 +137,7 @@ Se alguém souber como salvar o /var por linha de comando me avisa por favor.
 
 A covardia do Facebook com os outros desenvolvedores
 
-![](/assets/images/facebook2.png)
+![](/assets/img/facebook2.png)
 
 A tela do Facebook que o desenvolvedor normal pode redireciona o usuário não funciona no navegador que o celular Moto G, por exemplo, abre pra autenticação de Hotspot.
 
