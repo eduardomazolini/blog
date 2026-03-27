@@ -7,7 +7,8 @@ Eu uso nginx proxy manager e estava tendo problema em conectar meus rádios M5.
 
 Infelizmente a solução reduziu a segurança de todos os meus outros serviços deste proxy porque não achei uma solução que poderia ser aplicada a um único host.
 
-!!! Agora existe solução individual de certificado
+> Agora existe solução individual de certificado
+{: .prompt-tip }
 
 Outro problema: não sei deixar o meu NPM configurado se recriar o container.
 
@@ -22,7 +23,9 @@ Para isso eu editei o `/etc/letsencrypt.ini` alterando `key-type = ecdsa` para `
     elliptic-curve = secp384r1
     preferred-chain = ISRG Root X1
 
-!!! Na nova versão não precisa editar isso.
+> Na nova versão não precisa editar isso.
+{: .prompt-tip }
+
 ## Alteração no algoritmo de troca de chave:
 
 ### DH
@@ -72,9 +75,12 @@ Como estou usando container eu copiei e editei localmente os 2 arquivos de confi
     docker cp ssl-ciphers.conf.bkp nginx-proxy-manager-app-1:/etc/nginx/conf.d/include/ssl-ciphers.conf
     docker restart nginx-proxy-manager-app-1
 
-! Atenção o comando para baixar os arquivos originais eu não listei pq são arquivos pequenos cada um pode fazer como quiser. O importante é olhar o original.
+>Atenção o comando para baixar os arquivos originais eu não listei pq são arquivos pequenos cada um pode fazer como quiser. O importante é olhar o original.
+{: .prompt-danger }
 
-!! Na nova versão do NPM é possível cria certificados RSA, isso pode ser selecionado, não precisa mais editar o `/etc/letsencrypt.ini`
+
+>Na nova versão do NPM é possível cria certificados RSA, isso pode ser selecionado, não precisa mais editar o `/etc/letsencrypt.ini`
+{: .prompt-warning }
 
 ## Testando a configuração
 
@@ -92,9 +98,11 @@ Hoje existem certificados:
 - RSA - Baseado em fatoração de número primo
 - ECDSA - Baseado em curva Elíptica (mais seguro, menor e mais leve)
 
-!! M5 só aceita RSA
+> M5 só aceita RSA
+{: .prompt-warning }
 
-!!! Agora o Nginx Proxy Manager permite escolher RSA individualmente e apesar do ECDSA ser o padrão.
+> Agora o Nginx Proxy Manager permite escolher RSA individualmente e apesar do ECDSA ser o padrão.
+{: .prompt-tip }
 
 #### Troca de chaves
 
@@ -103,26 +111,32 @@ Hoje existem certificados:
 ##### Estático
 RSA que é chamada de estática pois usa o certificado se ele for comprometido pode usar para des-criptografar comunicações antigas
 
-!! Quando um DHE é ativado essa opção é desativada.
+>Quando um DHE é ativado essa opção é desativada.
+{: .prompt-tip }
+
 ##### DHE (Diffie-Hellman Ephemeral)
 
 Precisa de dhparam que é estático publico, mas é único.
 Para gerar a chave um segundo numero aleatório é gerado.
 No inicio o dhparam era igual pra todos, então as contas feitas a partir dele poderiam ser pré-calculadas por uma entidade poderosa, agora que são únicos isso fica impossível.
 
-!!! Não é oferecida pelo M5 na conexão mas ele aceita como cliente. Lembre de criar e especificar o dhparam. 
+>Não é oferecida pelo M5 na conexão, mas ele aceita como cliente. Lembre de criar e especificar o dhparam. 
+{: .prompt-tip }
 
 ##### ECDHE (Elliptic Curve DHE)
 
 É a evolução do DHE. Em vez de usar cálculos modulares complexos com números primos gigantes (que exigem muito processamento), ele utiliza a matemática de **Curvas Elípticas**.
 
-!! Mas nosso antigo equipamento M5 não é compatível.
+> Mas nosso antigo equipamento M5 não é compatível.
+{: .prompt-warning }
 
 ##### P-256 (prime256v1)
 
 Um formato bem moderno pós-quântico compatível com NIST.
 
-!! Ainda não usado no nosso sistema.
+> Ainda não usado no nosso sistema.
+{: .prompt-warning }
+
 #### Algoritmo de Criptografia + Modo de Operação
 
 É a espessura e o material das paredes do cofre (Criptografia) e como as trancas são dispostas (Modo).
@@ -132,7 +146,9 @@ Um formato bem moderno pós-quântico compatível com NIST.
 O algoritmo com tamanho da chave (128 / 256 bits), bom para CPUs modernas que tem instruções especificas para isso (AES-NI).
 Modos de operação **GCM** (Rápido/Paralelo) ou **CBC** (Antigo/Legado).
 
-!! O único aceito pelos nossos equipamentos.
+>O único aceito pelos nossos equipamentos.
+{: .prompt-tip }
+
 ##### ChaCha20
 Feito para ser rápido via software. O modo é sempre **Poly1305**
 
@@ -147,6 +163,9 @@ Obsoleto.
 ##### SHA-256 também conhecido com SHA-2
 
 Padrão atual.
+
+>Padrão
+{: .prompt-tip }
 
 ##### SHA-384
 
