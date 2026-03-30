@@ -1,5 +1,5 @@
 ---
-tags: [Mikrotik]
+tags: [mikrotik]
 ---
 
 Recebi de um amigo o script com os beeps e pausas, o mais difícil, eu só modifiquei colocando os LEDs.

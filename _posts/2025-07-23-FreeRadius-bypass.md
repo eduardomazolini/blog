@@ -1,5 +1,5 @@
 ---
-tags: [linux, Mikrotik]
+tags: [linux, mikrotik]
 ---
 Imaginem se um dia der M... você perdeu seu banco de dados, mas precisa acessar seus equipamentos, precisa liberar o mínimo de acesso aos clientes.
 

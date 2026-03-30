@@ -1,4 +1,5 @@
 ---
+tags: [cloudflare, wireguard, vpn]
 ---
 
 A CloudFlare oferece o serviço o serviço [Zero Trust](https://one.dash.cloudflare.com) que é gratuito até certo ponto e muito útil.

@@ -1,5 +1,5 @@
 ---
-tags: [Proxmox]
+tags: [proxmox]
 ---
 
 No Servidor Proxmox

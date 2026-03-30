@@ -1,5 +1,5 @@
 ---
-tags: [linux, Proxmox, VM]
+tags: [linux, proxmox, vm]
 ---
 
 Como falei antes usar cloud-init e libguestfs é muito útil aqui vou escrever como eu usei.

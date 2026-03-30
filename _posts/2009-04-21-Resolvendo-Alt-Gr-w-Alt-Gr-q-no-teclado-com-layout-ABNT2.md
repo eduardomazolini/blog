@@ -1,7 +1,6 @@
 ---
 tags: [linux]
 ---
-
 Hoje recebi um notebook com a missão de deixar funcionando um linux.
 De cara um problema, cade a / ?? rsrs. Cade a "/" e "?" ?
 Penei, e achei só um cara dizendo que fez e colocou no blog mas o arquivo mesmo nada.
@@ -36,7 +35,8 @@ Então vou deixar uma dica aqui [Kanata](https://github.com/jtroo/kanata).
 Também to usando o ThinkPad e apesar dele ter uma tecla ao lado do alt gr de `/?` ela não funciona, essa tecla é reconhecida como `KEY_RIGHTCTRL`.
 
 Eu arrumei a tecla criando o arquivo `/etc/udev/hwdb.d/90-teclado-abnt2-fix.hwdb`:
+
 ```
 evdev:input:b*v*p*e*
- KEYBOARD_KEY_9d=ro
+KEYBOARD_KEY_9d=ro
 ```

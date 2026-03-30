@@ -1,5 +1,5 @@
 ---
-tags: [DNS, linux, Mikrotik, rede]
+tags: [dns, linux, mikrotik, rede]
 ---
 
 ## Controles de DNS na Ludicando

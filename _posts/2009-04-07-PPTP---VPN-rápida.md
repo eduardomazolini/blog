@@ -1,5 +1,5 @@
 ---
-tags: [linux]
+tags: [linux, vpn, wireguard]
 ---
 
 http://poptop.sourceforge.net/yum/stable/packages/ppp-2.4.4-9.0.rhel5.i386.rpm

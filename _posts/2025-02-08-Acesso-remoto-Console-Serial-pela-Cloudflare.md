@@ -1,4 +1,5 @@
 ---
+tags: [mikrotik, vpn, wireguard, cloudflare]
 ---
 
 Pessoal eu penei por um ano e meio para conseguir entender o que fazer e como fazer. Finalmente terminei.

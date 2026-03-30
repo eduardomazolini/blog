@@ -1,5 +1,5 @@
 ---
-tags: [linux, Proxmox, VM]
+tags: [linux, proxmox, vm]
 ---
 
 Para usar o Fedora Core é necessário criar um arquivo de inicialização semelhante à ideia do Cloud-init.

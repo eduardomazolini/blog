@@ -1,5 +1,5 @@
 ---
-tags: [Mikrotik]
+tags: [mikrotik]
 ---
 
 Infelizmente ao contrario do Speedy (ADSL) trocar de IP no Virtua(serviço da NET) é mais complicado.

@@ -1,5 +1,5 @@
 ---
-tags: [asterisk, Mikrotik, segurança, voip]
+tags: [asterisk, mikrotik, segurança, voip]
 ---
 
 Gostaria de compartilhar como eu fiz para evitar ataques ao meu Asterisk.

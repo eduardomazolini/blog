@@ -1,10 +1,9 @@
- O site do [Virt-Manage](https://virt-manager.org/)r mostra que para instalar ele é simples basta digitar:
+O site do [Virt-Manager](https://virt-manager.org/) mostra que para instalar ele é simples basta digitar:
 ```
 sudo apt install virt-manager
-
 ```
-Mas você precisa digitar a senha para fazer sudo cada vez que abre ao menos que coloque seus usuários no grupo libvirt: 
 
+Mas você precisa digitar a senha para fazer sudo cada vez que abre ao menos que coloque seus usuários no grupo libvirt:
 ```
 sudo usermod -aG libvirt aluno
 sudo usermod -aG libvirt $USER

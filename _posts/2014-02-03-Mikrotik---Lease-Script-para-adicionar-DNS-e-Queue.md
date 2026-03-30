@@ -1,5 +1,5 @@
 ---
-tags: [DHCP, DNS, Mikrotik, Queue]
+tags: [dhcp, dns, mikrotik, queue]
 ---
 
 No mikrotik o DHCP Server não adiciona o hostname no DNS, melhor dizendo o DNS não tem reconhece a solicitação para publicar um nome.

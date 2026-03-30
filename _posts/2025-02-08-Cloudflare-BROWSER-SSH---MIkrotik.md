@@ -1,5 +1,5 @@
 ---
-tags: [linux, Mikrotik, VM]
+tags: [linux, mikrotik, vm]
 ---
 
 ## TL;DR

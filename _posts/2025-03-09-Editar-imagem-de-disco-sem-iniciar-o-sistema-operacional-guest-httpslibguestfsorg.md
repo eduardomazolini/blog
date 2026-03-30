@@ -1,5 +1,5 @@
 ---
-tags: [linux, Proxmox, VM]
+tags: [linux, proxmox, vm]
 ---
 
 E [nesse segundo](https://youtu.be/jT6_6qiJffY?t=304) que esse video tem a informação mais util.

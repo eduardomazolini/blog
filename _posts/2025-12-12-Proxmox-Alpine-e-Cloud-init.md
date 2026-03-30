@@ -1,5 +1,5 @@
 ---
-tags: alpine, Proxmox
+tags: [alpine, proxmox]
 ---
 Eu já falei sobre o cloud-init mas usei ele no limite da GUI.
 O que era extra eu fazia editando a imagem direto como o libguestfs.
