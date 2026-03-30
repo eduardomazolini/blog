@@ -1,7 +1,11 @@
 ---
-tags: [ubnt,m5,uisp,letsencrypt,nginx]
+tags:
+  - ubnt
+  - m5
+  - nginx
+  - letsencrypt
+  - uisp
 ---
-
 # Problemas com Nginx Proxy Manager e rádios M5
 
 Eu uso nginx proxy manager e estava tendo problema em conectar meus rádios M5.
@@ -16,13 +20,14 @@ Outro problema: não sei deixar o meu NPM configurado se recriar o container.
 ## Solução: criar certificados na Let's Encrypt do tipo RSA
 
 Para isso eu editei o `/etc/letsencrypt.ini` alterando `key-type = ecdsa` para `key-type = rsa`.
-  
-    text = True
-    non-interactive = True
-    webroot-path = /data/letsencrypt-acme-challenge
-    key-type = rsa
-    elliptic-curve = secp384r1
-    preferred-chain = ISRG Root X1
+```
+text = True
+non-interactive = True
+webroot-path = /data/letsencrypt-acme-challenge
+key-type = rsa
+elliptic-curve = secp384r1
+preferred-chain = ISRG Root X1
+```
 
 > Na nova versão não precisa editar isso.
 {: .prompt-tip }
@@ -34,10 +39,11 @@ Para isso eu editei o `/etc/letsencrypt.ini` alterando `key-type = ecdsa` para `
 #### dhparam
 
 Para isso precisa criar o arquivo dhparam.pem com o comando:
-  
-    openssl dhparam -out /etc/nginx/dhparam.pem 2048
+```
+openssl dhparam -out /etc/nginx/dhparam.pem 2048
+```
 
-Após criar o arquivo precisa ser indicado na configuração  em  `/etc/nginx/conf.d/include/ssl-ciphers.conf`:
+Após criar o arquivo precisa ser indicado na configuração em `/etc/nginx/conf.d/include/ssl-ciphers.conf`:  
 
 ```
 ssl_dhparam /etc/nginx/dhparam.pem;
@@ -48,7 +54,7 @@ ssl_dhparam /etc/nginx/dhparam.pem;
 - DHE-RSA-AES128-GCM-SHA256
 - DHE-RSA-AES256-GCM-SHA384
 
-### Estático  / RSA
+### Estático / RSA
 
 Não precisa do dhparam, precisa não existir na lista uma opção com inicio **DHE**.
 #### ssl_ciphers
@@ -56,29 +62,29 @@ Não precisa do dhparam, precisa não existir na lista uma opção com inicio **
 - AES128-GCM-SHA256
 
 ```
-    /etc/nginx/conf.d/include/ssl-ciphers.conf
-    # intermediate configuration. tweak to your needs.
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:AES128-GCM-SHA256';
-    ssl_prefer_server_ciphers off;
-    ssl_dhparam /etc/nginx/dhparam.pem;
+/etc/nginx/conf.d/include/ssl-ciphers.conf
+# intermediate configuration. tweak to your needs.
+ssl_protocols TLSv1.2 TLSv1.3;
+ssl_ciphers 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:AES128-GCM-SHA256';
+ssl_prefer_server_ciphers off;
+ssl_dhparam /etc/nginx/dhparam.pem;
 ```
-    
 Por último precisa reiniciar o nginx.
 
 ## Configuração no container
 
 Como estou usando container eu copiei e editei localmente os 2 arquivos de configuração depois enviei tudo para o container com os comandos:
-  
-  
-    docker exec nginx-proxy-manager-app-1 openssl dhparam -out /etc/nginx/dhparam.pem 2048
-    docker cp letsencrypt.ini nginx-proxy-manager-app-1:/etc/letsencrypt.ini
-    docker cp ssl-ciphers.conf.bkp nginx-proxy-manager-app-1:/etc/nginx/conf.d/include/ssl-ciphers.conf
-    docker restart nginx-proxy-manager-app-1
+```
+docker exec nginx-proxy-manager-app-1 openssl dhparam -out /etc/nginx/dhparam.pem 2048
+
+docker cp letsencrypt.ini nginx-proxy-manager-app-1:/etc/letsencrypt.ini
+
+docker cp ssl-ciphers.conf.bkp nginx-proxy-manager-app-1:/etc/nginx/conf.d/include/ssl-ciphers.conf
+```
+docker restart nginx-proxy-manager-app-1
 
 >Atenção o comando para baixar os arquivos originais eu não listei pq são arquivos pequenos cada um pode fazer como quiser. O importante é olhar o original.
-{: .prompt-danger }
-
+{: .prompt-danger }  
 
 >Na nova versão do NPM é possível cria certificados RSA, isso pode ser selecionado, não precisa mais editar o `/etc/letsencrypt.ini`
 {: .prompt-warning }
@@ -86,10 +92,9 @@ Como estou usando container eu copiei e editei localmente os 2 arquivos de confi
 ## Testando a configuração
 
 Para testar usei o nmap:
-  
-  
-    nmap --script ssl-enum-ciphers -p 443 uisp.xxxxxx.com.br
-
+```
+nmap --script ssl-enum-ciphers -p 443 uisp.xxxxxx.com.br
+```
 
 ### Detalhes Sobre HTTPS
 
@@ -110,7 +115,8 @@ Hoje existem certificados:
 É o processo de combinar a combinação do cofre com o destinatário sem que o transportador ouça.
 
 ##### Estático
-RSA que é chamada de estática pois usa o certificado se ele for comprometido pode usar para des-criptografar comunicações antigas
+
+RSA que é chamada de estática pois usa o certificado se ele for comprometido pode usar para des-criptografar comunicações antigas  
 
 >Quando um DHE é ativado essa opção é desativada.
 {: .prompt-tip }
@@ -121,7 +127,7 @@ Precisa de dhparam que é estático publico, mas é único.
 Para gerar a chave um segundo numero aleatório é gerado.
 No inicio o dhparam era igual pra todos, então as contas feitas a partir dele poderiam ser pré-calculadas por uma entidade poderosa, agora que são únicos isso fica impossível.
 
->Não é oferecida pelo M5 na conexão, mas ele aceita como cliente. Lembre de criar e especificar o dhparam. 
+>Não é oferecida pelo M5 na conexão, mas ele aceita como cliente. Lembre de criar e especificar o dhparam.
 {: .prompt-tip }
 
 ##### ECDHE (Elliptic Curve DHE)
