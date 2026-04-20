@@ -102,6 +102,12 @@ sudo update-grub
 sudo reboot
 ```
 
+Para trocar o efeito:
+```
+sudo plymouth-set-default-theme --list
+sudo plymouth-set-default-theme spinner 
+udo update-initramfs -u -k all
+```
 ## Luks
 
 > Não use esse tutorial por enquanto!
@@ -109,25 +115,26 @@ sudo reboot
 
 Um pequeno ajuste para não ter que digitar 2 senhas no boot
 
-### Preparar o ambiente:
+### Como Fazer a chave ser copiada para o initramfs (Solução insegura):
 Preciso declarar no `/etc/cryptsetup-initramfs/conf-hook`
 ```
 echo 'KEYFILE_PATTERN=/etc/keys/*.key' | sudo tee -a /etc/cryptsetup-initramfs/conf-hook
 ```
-> Importante! Esse passo só ocorre uma vez mas é fundamental pro sistema funcionar. Mas também é o problema deste tutorial.
+> Importante! Esse passo só ocorre uma vez mas é fundamental pro sistema funcionar.
+> Mas também é o problema deste tutorial, pois torna o ambiente inseguro
 > A chave é copiada do disco que esta criptografado para dentro do initramfs que não é criptografado, nem esta em uma partição criptografada.
-
-Vou criar uma chave em um local seguro:
-```
-sudo mkdir -m 700 /etc/keys
-sudo chmod 400 /etc/keys/vda3.key
-```
 
 ### Criar a chave da partição:
 
 Criar a chave especifica desta partição:
 ```
 sudo dd if=/dev/urandom of=/etc/keys/vda3.key bs=512 count=8
+```
+
+Ajustar as permissões da chave:
+```
+sudo mkdir -m 700 /etc/keys
+sudo chmod 400 /etc/keys/vda3.key
 ```
 
 Editar o `/etc/crypttab`,  a linha que trata do vda3 entre o UUID e demais para metros tem a palavra `none`, vamos trocar pelo caminho do arquivo.
@@ -187,13 +194,13 @@ A saída:
 ``` 
 Digite qualquer senha existente: 
 Warning: keyslot operation could fail as it requires more than available memory.
-Warning: keyslot operation could fail as it requires more than available memory.
 ``` 
 
 Abri com a chave para testar:
 ``` 
 sudo cryptsetup open /dev/vda3 vda3_crypt --key-file /etc/keys/vda3.key
 ``` 
+
 A saída:
 ``` 
 Warning: keyslot operation could fail as it requires more than available memory.
@@ -232,12 +239,51 @@ update-initramfs: Generating /boot/initrd.img-6.12.73+deb13-amd64
 cryptsetup: WARNING: Resume target vda3_crypt uses a key file
 ```
 
+### Solução com cache de senha
+
+Vamos usar a mesma senha em todas as partições Luks
+
+#### Instalar a dependência
+
+```
+apt install keyutils
+```
+
+#### Ajustar o Grub
+
+O Debian usa systemd como init e o `systemd-cryptsetup-generator` que normalmente consome  o `/etc/crypttab`. A opção `keyscript` **não é suportada pelo systemd**.
+
+Então temos que desativar essa função do systemd e pedir para o initramfs fazer isso da sua forma nativa.
+
+Edite o grub `/etc/default/grub`:
+
+```
+sudo vi /etc/default/grub
+```
+
+Ajuste o conteúdo para adicionar `luks.crypttab=no` ao final do parâmetro `GRUB_CMDLINE_LINUX_DEFAULT`
+```
+GRUB_CMDLINE_LINUX_DEFAULT="... luks.crypttab=no"
+```
+
+#### Ajustar o [crypttab](https://manpages.debian.org/trixie/cryptsetup/crypttab.5.en.html)
+
+Adicionar parâmetros no `/etc/crypttab` no final da linha adicione seguido nos parâmetros.
+```
+,initramfs,keyscript=decrypt_keyctl
+```
+
+- initramfs pede para o initramfs descriptografar, só necessário para quem não é root nem resume. 
+- [keyscript=decrypt_keyctl](https://cryptsetup-team.pages.debian.net/cryptsetup/README.keyctl.html#decrypt_keyctl) Um script de cache de senha, ele irá armazenar em cache a senha de todas as entradas de crypttab com o mesmo identificador.
+
 ## Hibernar
 
 Para hibernar parece o initramfs precisa saber onde esta armazenado o dump da memoria RAM.
-Esse espaço precisa ser **2/5 maior que a memória RAM** segundo o [wiki do Debian](https://wiki.debian.org/Hibernation#Suspend_and_hibernate_configuration_with_systemd_.2F_Debian_Buster_and_more_recent), pra quem tem pouca memória trabalhar com o dobro ou no minimo 50%
+Esse espaço precisa ser **2/5 maior que a memória RAM** segundo o [wiki do Debian](https://wiki.debian.org/Hibernation#Suspend_and_hibernate_configuration_with_systemd_.2F_Debian_Buster_and_more_recent), pra quem tem pouca memória trabalhar com o dobro ou no minimo 50% a mais.
 
 O Debian deixou a informação por padrão em `/etc/initramfs-tools/conf.d/resume`:
 ```
 RESUME=/dev/mapper/vda3_crypt
 ```
+
+>Tive já problema de usar hibernate quando o modo é BIOS  e ao usar vídeo Virtio.
