@@ -1,5 +1,5 @@
 ---
-tags: [Proxmox]
+tags: [proxmox]
 ---
 
 Como eu configurei meu Proxmox para enviar e-mail
