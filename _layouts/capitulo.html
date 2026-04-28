@@ -1,0 +1,10 @@
+---
+layout: post
+---
+{% if page.serie %}
+<h1>{{ page.slug | capitalize }}</h1>
+<h2>{{ page.serie | capitalize }}</h2>
+<h3>{{ page.order | capitalize }}</h3>
+{% endif %}
+{{ content }}
+
