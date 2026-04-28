@@ -42,3 +42,27 @@ podman run --rm -it \
    -e GEM_HOME=/srv/jekyll/.vendor/bundle \
    docker.io/jekyll/jekyll \
    bash -c "bundle install && bundle exec jekyll serve --watch --force_polling"
+
+
+podman run --rm -it \
+  -p 4000:4000 \
+  -v "$PWD:/srv/jekyll:Z" \
+  -e BUNDLE_PATH=/srv/jekyll/.vendor/bundle \
+  -e GEM_HOME=/srv/jekyll/.vendor/bundle \
+  -w /srv/jekyll \
+  docker.io/ruby:3.3-slim \
+  bash -c "
+    apt-get update -qq && \
+    apt-get install -y -qq build-essential git && \
+    gem install bundler && \
+    bundle install && \
+    bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling
+  "
+podman run --rm -it \
+  -p 4000:4000 \
+  -v "$PWD:/srv/jekyll:Z" \
+  -e BUNDLE_PATH=/srv/jekyll/.vendor/bundle \
+  -e GEM_HOME=/srv/jekyll/.vendor/bundle \
+  -w /srv/jekyll \
+  docker.io/ruby:3.3-slim \
+  bash -c "bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling"
