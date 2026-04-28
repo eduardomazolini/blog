@@ -105,6 +105,9 @@ collections:
   tabs:
     output: true
     sort_by: order
+  series-debian-install:
+    output: true
+    sort_by: order
 
 defaults:
   - scope:
@@ -127,6 +130,11 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: "_series-debian-install"
+    values:
+      layout: capitulo
+      permalink: /series/debian/:slug
 
 sass:
   style: compressed
@@ -153,6 +161,8 @@ exclude:
   - CNAME
   - dev.sh
   - Dockerfile
+  - posts
+  - _pluginsxxx
 
 jekyll-archives:
   enabled: [categories, tags]
