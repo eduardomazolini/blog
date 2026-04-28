@@ -5,5 +5,5 @@ icon: fa-solid fa-book-open
 order: 5
 ---
 
-# Debian Install
+# [Debian Install](/series/debian)
 

@@ -52,4 +52,4 @@ Também corrigimos erro ao excutar devido a uma dependencia, muti importante.
 
 A questão é segurança, se precisa hibernar, precisa ajustar o desbloqueio do SWAP antes do boot.
 
-# [hibernte](hibernate.html)
+# [Hibernate](hibernate.html)
