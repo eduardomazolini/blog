@@ -53,3 +53,11 @@ Também corrigimos erro ao excutar devido a uma dependencia, muti importante.
 A questão é segurança, se precisa hibernar, precisa ajustar o desbloqueio do SWAP antes do boot.
 
 # [Hibernate](hibernate.html)
+
+Se tem um notebook e suspender e acabar a bateria, ter hibernação ativada pode te salvar.
+
+# [zSwap](zsawp.md)
+
+Pouca RAM? Então zSwap ou zRAM podem ser uteis.
+Eu acho que quando não tem nada de RAM, swap é inevitavel então zSwap é melhor.
+Se tiver alguma RAM então zRAM ajuda.
