@@ -56,15 +56,15 @@ A questão é segurança, se precisa hibernar, precisa ajustar o desbloqueio do 
 
 Se tem um notebook e suspender e acabar a bateria, ter hibernação ativada pode te salvar.
 
-# [zSwap](zsawp.html)
+# [zSwap](zswap.html)
 
 Pouca RAM? Então zSwap ou zRAM podem ser uteis.
 Eu acho que quando não tem nada de RAM, swap é inevitável então zSwap é melhor.
 Se tiver alguma RAM então zRAM ajuda.
 
-# [BTRFS - Ajustando partição](btrfs-partition.html)
+# [BTRFS - Particionando](btrfs-partition.html)
 
-O instalador do Debian não ajuda a criar subvolumes btrfs então precisa fazer isso depois de pronto.
+O instalador do Debian não ajuda a criar subvolumes BTRFS então precisa fazer isso depois de pronto.
 
 # [BTRFS - Snapshots](btrfs-snapshots.html)
 
