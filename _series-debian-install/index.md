@@ -26,12 +26,12 @@ Não pretendo dizer:
 
 Quero dizer:
 
-- "Estes são alguns caminhos que eu sigo — veja se fazem sentido para você."  
+- "Estes são alguns caminhos que eu sigo. Veja se fazem sentido para você."  
 - "Estas são as referências oficiais, mas aqui está um modo mais rápido, pensado para economizar tempo e evitar problemas que já enfrentei."
 
 ---
 
-# [Alt+Tab](alt+tab.html)
+# [Alt+Tab](alt-tab.html)
 
 No Debian 2 teclas de atalho fazem a mesma coisa alterar entre applicativos. Vamos fazer o alt+tab alterar entre janelas igual no Windows e o super+tab fica como era.
 
@@ -56,8 +56,17 @@ A questão é segurança, se precisa hibernar, precisa ajustar o desbloqueio do 
 
 Se tem um notebook e suspender e acabar a bateria, ter hibernação ativada pode te salvar.
 
-# [zSwap](zsawp.md)
+# [zSwap](zsawp.html)
 
 Pouca RAM? Então zSwap ou zRAM podem ser uteis.
 Eu acho que quando não tem nada de RAM, swap é inevitavel então zSwap é melhor.
 Se tiver alguma RAM então zRAM ajuda.
+
+# [BTRFS - Ajustando partição](btrfs-partition.html)
+
+O instalador do Debian não ajuda a criar subvolumes btrfs então precisa fazer isso depois de pronto.
+
+# [BTRFS - Snapshots](btrfs-snapshots.html)
+
+O grande super-poder do BTRFS é o snapshot. Backups ocupando espaço só da diferença.
+Mas cuidado isso pode deixar seu disco sem espaço e ser dificil resolver rápido.

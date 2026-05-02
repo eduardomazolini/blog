@@ -40,7 +40,7 @@ https://people.debian.org/~az/sage-2003/sage-paper.pdf
 
 > ... estamos ali para ajudar a pessoa a se apoderar desse conhecimento: o pc é dela, as escolhas também. Pode parecer no princípio, pra pessoa que está acostumada a não ser dona do seu proprio computador, que é mais difícil. Mas se ela tiver esse interesse, ela vai ultrapassar essa primeira barreira e vai aos poucos entendendo o que é ter autonomia nesse ponto. (...)
 
-Essa visão — de entender que o uso do computador é uma escolha — tem muito valor para mim.  
+Essa visão, de entender que o uso do computador é uma escolha, tem muito valor para mim.  
 É pensar tecnologia da informação como se pensa:
 - escolher entre um fast food e uma comida feita por alguém conhecido.
 - escolher entre uma peça de brechó, com história e menor impacto ambiental, e uma roupa descartável produzida em condições precárias.
@@ -51,7 +51,7 @@ Por fim, há uma diferença importante quanto ao peso dos argumentos e à ordem 
 
 - Prefiro que uma pessoa que ainda não desenvolveu plenamente essa consciência política use um sistema livre, em vez de voltar ao Windows.  
 - Não considero ideal que ela enfrente dificuldades constantes a cada tarefa.  
-- Defendo a abordagem: usar primeiro, aprender depois. Um aprendizado de cima para baixo, que se aprofunda gradualmente — em vez de exigir um domínio prévio de todos os detalhes antes de qualquer uso prático.
+- Defendo a abordagem: usar primeiro, aprender depois. Um aprendizado de cima para baixo, que se aprofunda gradualmente, em vez de exigir um domínio prévio de todos os detalhes antes de qualquer uso prático.
 
 > Decisões sobre quais softwares usar e que configurações fazer são subjetivas demais para fazermos uma cartilha, ou algo do gênero.
 

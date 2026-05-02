@@ -19,7 +19,7 @@ Artigos na documentação do Kernel sobre:
 ## Qual compressor?
 
 ``` bash
-# Ver flags de CPU — AVX2 indica Haswell (2013) ou mais novo
+# Ver flags AVX2 na CPU indica Haswell (2013) ou mais novo
 grep -m1 flags /proc/cpuinfo | tr ' ' '\n' | grep -E "^avx2$|^avx$"
 ```
 
