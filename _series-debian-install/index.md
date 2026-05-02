@@ -33,7 +33,7 @@ Quero dizer:
 
 # [Alt+Tab](alt-tab.html)
 
-No Debian 2 teclas de atalho fazem a mesma coisa alterar entre applicativos. Vamos fazer o alt+tab alterar entre janelas igual no Windows e o super+tab fica como era.
+No Debian 2 teclas de atalho fazem a mesma coisa alterar entre aplicativos. Vamos fazer o alt+tab alterar entre janelas igual no Windows e o super+tab fica como era.
 
 # [Splash](splash.html)
 
@@ -46,7 +46,7 @@ Flatpak vem crescendo e não vai querer deixar de usar um app por que ele não �
 # [AppImage](appimage.html)
 
 AppImage não é para ser insalado, mas não vai querer rodar seus apps da pasta Download sem ter um belo atalho.
-Também corrigimos erro ao excutar devido a uma dependencia, muti importante.
+Também corrigimos erro ao executar devido a uma dependência, muti importante.
 
 # [Luks](luks.html)
 
@@ -59,7 +59,7 @@ Se tem um notebook e suspender e acabar a bateria, ter hibernação ativada pode
 # [zSwap](zsawp.html)
 
 Pouca RAM? Então zSwap ou zRAM podem ser uteis.
-Eu acho que quando não tem nada de RAM, swap é inevitavel então zSwap é melhor.
+Eu acho que quando não tem nada de RAM, swap é inevitável então zSwap é melhor.
 Se tiver alguma RAM então zRAM ajuda.
 
 # [BTRFS - Ajustando partição](btrfs-partition.html)
@@ -69,4 +69,4 @@ O instalador do Debian não ajuda a criar subvolumes btrfs então precisa fazer 
 # [BTRFS - Snapshots](btrfs-snapshots.html)
 
 O grande super-poder do BTRFS é o snapshot. Backups ocupando espaço só da diferença.
-Mas cuidado isso pode deixar seu disco sem espaço e ser dificil resolver rápido.
+Mas cuidado isso pode deixar seu disco sem espaço e ser difícil resolver rápido.
