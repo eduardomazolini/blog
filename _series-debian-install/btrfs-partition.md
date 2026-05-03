@@ -36,7 +36,7 @@ vda
 
 ## Criando os volumes
 
-``` bash
+```
 sudo mount /dev/vda4 /mnt
 
 sudo btrfs subvolume create /mnt/@home
@@ -47,14 +47,14 @@ sudo btrfs subvolume create /mnt/@tmp
 
 ## Verificado
 
-``` bash
+```
 mount | grep /mnt
 
 btrfs subvolume list /mnt
 ```
 
 ## Copiando os dados
-``` bash
+```
 sudo mkdir -p /mnt/home
 sudo mount -o subvol=@home /dev/vda4 /mnt/home
 sudo rsync -aAX --progress /home/ /mnt/home/
@@ -84,7 +84,7 @@ Decidindo a compressão
 ```
 
 Editar o /etc/fstab
-``` bash
+```
 UUID=fbcfacaa-e0db-4ae3-87dd-4808332a27d6  /          btrfs  subvol=@rootfs,compress=zstd:3,noatime 0 0
 UUID=fbcfacaa-e0db-4ae3-87dd-4808332a27d6  /home      btrfs  subvol=@home,compress=zstd,noatime    0 0
 UUID=fbcfacaa-e0db-4ae3-87dd-4808332a27d6  /var/log   btrfs  subvol=@log                           0 0
@@ -94,12 +94,12 @@ UUID=fbcfacaa-e0db-4ae3-87dd-4808332a27d6  /tmp       btrfs  subvol=@tmp,nosuid,
 
 Se quiser comprimir o que não foi comprimido pode usar o comando a baixo:
 
-``` bash
+```
 sudo btrfs filesystem defragment -r -czstd /
 ```
 
 Vamos limpar tudo agora
-``` bash
+```
 sudo umount /mnt/home
 sudo rm -R /mnt/home
 sudo umount /mnt/log
@@ -111,7 +111,7 @@ sudo umount /mnt
 
 ## Mover os diretórios
 
-``` bash
+```
 sudo mv /home /home.old
 sudo mkdir /home
 sudo mv /var/log /var/log.old
@@ -127,7 +127,7 @@ sudo mount -a
 
 Tem que ser "drwxrwxrwt"
 
-``` bash
+```
 $ ls -ld /tmp
 drwxr-xr-x 1 root root 138 dez 17 12:18 /tmp
 $ sudo chmod 1777 /tmp
@@ -137,7 +137,7 @@ drwxrwxrwt 1 root root 138 dez 17 12:18 /tmp
 
 ## Verificando a montargem e limpando
 
-``` bash
+```
 findmnt -t btrfs
 $ findmnt -t btrfs
 TARGET       SOURCE              FSTYPE OPTIONS
@@ -152,7 +152,7 @@ TARGET       SOURCE              FSTYPE OPTIONS
 ## Limpeza dos dados
 Agora vamos apagar os dados antigos, que já foram copiados com rsync
 
-``` bash
+```
 sudo rm -rf /home.old
 sudo rm -rf /var/log.old
 sudo rm -rf /var/cache.old
