@@ -5,16 +5,9 @@ order: 7
 
 Se instalar usando opção sem LVM, criando a partição manualmente e escolha o / como BTRFS para facilitar.
 
-## Referencias
-
-https://github.com/Antynea/grub-btrfs.git
-
-https://github.com/wmutschl/timeshift-autosnap-apt.git
-
 ## Identificando
 
 ```
-
 $ sudo btrfs subvolume list /
 ID 256 gen 100 top level 5 path @rootfs
 
