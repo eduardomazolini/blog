@@ -5,7 +5,7 @@ order: 7
 
 Se instalar usando opção sem LVM, criando a partição manualmente e escolha o / como BTRFS para facilitar.
 
-## Refencias
+## Referencias
 
 https://github.com/Antynea/grub-btrfs.git
 
