@@ -13,7 +13,8 @@ https://github.com/wmutschl/timeshift-autosnap-apt.git
 
 ## Identificando
 
-``` bash
+```
+
 $ sudo btrfs subvolume list /
 ID 256 gen 100 top level 5 path @rootfs
 
