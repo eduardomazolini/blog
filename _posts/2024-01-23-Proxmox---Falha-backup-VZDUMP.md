@@ -1,3 +1,7 @@
+---
+tags:
+  - proxmox
+---
 Sofri com isso no meu servidor pois o backup é remoto.
 
 O log dizia:

@@ -1,4 +1,7 @@
 ---
+tags:
+  - proxmox
+  - vm
 ---
 
     Eu fui unir 2 proxmox em um cluster e cometi o erro de não fazer backup da pasta pve. Com isso perdi todas as maquinas do segundo servidor. Não os arquivos salvos na LVM, mas os .conf. As maquinas não pararam elas só sumiram da configuração. 

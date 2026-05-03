@@ -1,4 +1,7 @@
 ---
+tags:
+  - vm
+  - proxmox
 ---
 
 Hoje ter servidores pra cada necessidade já e claramente perda de recursos.

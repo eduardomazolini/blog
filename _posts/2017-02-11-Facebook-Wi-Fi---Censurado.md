@@ -1,5 +1,7 @@
 ---
-tag: [rascunho, intelbras]
+tags:
+  - rascunho
+  - intelbras
 ---
 
 Bom dia!
