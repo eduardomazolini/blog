@@ -7,6 +7,7 @@ Se instalar usando opção sem LVM, criando a partição manualmente e escolha o
 
 ## Identificando
 
+{% raw %}
 ```
 $ sudo btrfs subvolume list /
 ID 256 gen 100 top level 5 path @rootfs
@@ -31,6 +32,7 @@ vda
 ├─vda3 vfat    FAT32                                  64C4-7A53                             478,2M     2% /boot/efi
 └─vda4 btrfs                                          fbcfacaa-e0db-4ae3-87dd-4808332a27d6   48,2G    16% /
 ```
+{% endraw %}
 
 ## Criando os volumes
 
