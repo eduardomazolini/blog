@@ -5,39 +5,30 @@
     id="topbar"
     class="d-flex align-items-center justify-content-between px-lg-3 h-100"
   >
-    <nav id="breadcrumb" aria-label="Breadcrumb">
-      {% assign paths = page.url | split: '/' %}
+  <nav id="breadcrumb" aria-label="Breadcrumb">
+    {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+    
+    {% comment %} Item inicial: Home {% endcomment %}
+    <span>
+      <a href="{{ '/' | relative_url }}">
+        {{- site.data.locales[include.lang].tabs.home | capitalize -}}
+      </a>
+    </span>
 
-      {% if paths.size == 0 or page.layout == 'home' %}
-        <!-- index page -->
-        <span>{{ site.data.locales[include.lang].tabs.home | capitalize }}</span>
-
+    {% for crumb in crumbs offset: 1 %}
+      {% if forloop.last %}
+        {% comment %} Página atual (último item) {% endcomment %}
+        <span>{{ page.title }}</span>
       {% else %}
-        {% for item in paths %}
-          {% if forloop.first %}
-            <span>
-              <a href="{{ '/' | relative_url }}">
-                {{- site.data.locales[include.lang].tabs.home | capitalize -}}
-              </a>
-            </span>
-
-          {% elsif forloop.last %}
-            {% if page.collection == 'tabs' %}
-              <span>{{ site.data.locales[include.lang].tabs[item] | default: page.title }}</span>
-            {% else %}
-              <span>{{ page.title }}</span>
-            {% endif %}
-
-          {% elsif page.layout == 'category' or page.layout == 'tag' %}
-            <span>
-              <a href="{{ item | append: '/' | relative_url }}">
-                {{- site.data.locales[include.lang].tabs[item] | default: page.title -}}
-              </a>
-            </span>
-          {% endif %}
-        {% endfor %}
+        {% comment %} Níveis intermediários (Coleções/Pastas) {% endcomment %}
+        <span>
+          <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for c in crumbs limit: crumb_limit %}{{ c | append: '/' }}{% endfor %}">
+            {{- site.data.locales[include.lang].tabs[crumb] | default: crumb | replace:'-',' ' | capitalize -}}
+          </a>
+        </span>
       {% endif %}
-    </nav>
+    {% endfor %}
+  </nav>
     <!-- endof #breadcrumb -->
 
     <button type="button" id="sidebar-trigger" class="btn btn-link" aria-label="Sidebar">
