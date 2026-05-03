@@ -115,7 +115,7 @@ Depois:
 
 ### No RouterOS
 
-```routeros
+``` routeros
 /container/print
 # deve mostrar "R" (running)
 
@@ -124,7 +124,7 @@ Depois:
 
 ### Na rede (cliente Linux)
 
-```bash
+``` bash
 curl http://172.20.0.2:8080/adv
 ```
 
@@ -132,7 +132,7 @@ Resposta esperada: JSON com as chaves públicas do Tang (JWS).
 
 Exemplo de resposta válida:
 
-```json
+``` json
 {
   "payload": "eyJrZXlzIjogW3s...",
   "protected": "eyJhbGciOiJFUzUxMiIsImN0eSI6Imp3ay1zZXQranNvbiJ9",
@@ -146,7 +146,7 @@ Exemplo de resposta válida:
 
 Se quiser acessar pelo IP do roteador em vez do IP do container:
 
-```routeros
+``` routeros
 /ip/firewall/nat/add \
   chain=dstnat \
   dst-address=<ip-do-roteador> \
@@ -159,7 +159,7 @@ Se quiser acessar pelo IP do roteador em vez do IP do container:
 
 Teste:
 
-```bash
+``` bash
 curl http://<ip-do-roteador>:7500/adv
 ```
 
@@ -169,13 +169,13 @@ curl http://<ip-do-roteador>:7500/adv
 
 ### Instalar
 
-```bash
+``` bash
 sudo apt install clevis clevis-luks clevis-initramfs
 ```
 
 ### Vincular volume LUKS ao Tang
 
-```bash
+``` bash
 sudo clevis luks bind -d /dev/sdX tang '{"url": "http://172.20.0.2:8080"}'
 ```
 
@@ -183,7 +183,7 @@ O comando exibe o thumbprint da chave e pede confirmação, depois solicita a se
 
 ### Atualizar initramfs
 
-```bash
+``` bash
 sudo update-initramfs -u
 ```
 
@@ -191,7 +191,7 @@ Na próxima reinicialização, o servidor descriptografa automaticamente se o Ta
 
 ### Verificar slots LUKS
 
-```bash
+``` bash
 sudo cryptsetup luksDump /dev/sdX
 # ou
 sudo clevis luks list -d /dev/sdX
@@ -204,7 +204,7 @@ sudo clevis luks list -d /dev/sdX
 - As chaves Tang **não devem estar no mesmo disco físico** que o volume LUKS protegido — no caso do RB5009 isso está correto por design
 - Sempre mantenha uma **senha de recuperação** em um slot LUKS separado:
 
-```bash
+``` bash
 sudo cryptsetup luksAddKey --key-slot 7 /dev/sdX
 ```
 

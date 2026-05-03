@@ -13,7 +13,7 @@ https://github.com/wmutschl/timeshift-autosnap-apt.git
 
 ## Identificando
 
-```bash
+``` bash
 $ sudo btrfs subvolume list /
 ID 256 gen 100 top level 5 path @rootfs
 
@@ -141,7 +141,7 @@ sudo mount -a
 
 Tem que ser "drwxrwxrwt"
 
-```bash
+``` bash
 $ ls -ld /tmp
 drwxr-xr-x 1 root root 138 dez 17 12:18 /tmp
 $ sudo chmod 1777 /tmp
@@ -151,7 +151,7 @@ drwxrwxrwt 1 root root 138 dez 17 12:18 /tmp
 
 ## Verificando a montargem e limpando
 
-```bash
+``` bash
 findmnt -t btrfs
 $ findmnt -t btrfs
 TARGET       SOURCE              FSTYPE OPTIONS
