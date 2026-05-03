@@ -161,8 +161,7 @@ exclude:
   - CNAME
   - dev.sh
   - Dockerfile
-  - posts
-  - _pluginsxxx
+  - script
 
 jekyll-archives:
   enabled: [categories, tags]
