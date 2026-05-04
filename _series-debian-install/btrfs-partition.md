@@ -5,12 +5,6 @@ order: 7
 
 Se instalar usando opção sem LVM, criando a partição manualmente e escolha o / como BTRFS para facilitar.
 
-## Referencias
-
-https://github.com/Antynea/grub-btrfs.git
-
-https://github.com/wmutschl/timeshift-autosnap-apt.git
-
 ## Identificando
 
 ``` bash
@@ -164,6 +158,7 @@ TARGET       SOURCE              FSTYPE OPTIONS
 
 
 ## Limpeza dos dados
+
 Agora vamos apagar os dados antigos, que já foram copiados com rsync
 
 ``` bash
@@ -171,3 +166,14 @@ sudo rm -rf /home.old
 sudo rm -rf /var/log.old
 sudo rm -rf /var/cache.old
 ```
+
+## Considerações
+
+Entenda os passos que fizemos.
+Pense no seu ambiente e identifique pastas que tem dados que mudam com frequência e não possuem dados que devem ser salvos:
+- Caches
+- Temps
+- imagens de containers
+
+Eles podem tomar seu disco quando fizer snapshot, então isolar eles em sub-volumes diferentes é importante.
+Contribua me falando os diretórios que separa e o motivo.
