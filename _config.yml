@@ -133,6 +133,7 @@ defaults:
   - scope:
       path: "_series-debian-install"
     values:
+      layout: page
       permalink: /series/debian/:slug
 
 sass:
