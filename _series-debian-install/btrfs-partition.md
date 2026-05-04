@@ -1,3 +1,5 @@
+---
+---
 # BTRFS - Particionando
 
 Se instalar usando opção sem LVM, criando a partição manualmente e escolha o / como BTRFS para facilitar.
