@@ -25,7 +25,7 @@ IPv6
 DoH
 <https://doh.opendns.com/dns-query>
 
-### OpenDNS — Family Shield
+### OpenDNS - Family Shield
 
 
 IPv4
@@ -49,7 +49,7 @@ IPv6
 DoH
 <https://cloudflare-dns.com/dns-query>
 
-### Cloudflare — Block malware
+### Cloudflare - Block malware
 
 
 IPv4
@@ -63,7 +63,7 @@ IPv6
 DoH
 <https://security.cloudflare-dns.com>
 
-### Cloudflare — Block malware and adult content
+### Cloudflare - Block malware and adult content
 
 
 IPv4
@@ -100,7 +100,7 @@ Docs
 <https://developers.google.com/speed/public-dns/docs/doh?hl=pt-br>
 
 
-### AdGuard DNS — Servidores padrão
+### AdGuard DNS
 
 AdGuard DNS bloqueará anúncios e rastreadores.
 
@@ -119,7 +119,7 @@ DoH
 Página
 <https://adguard-dns.io/pt_br/public-dns.html>
 
-### AdGuard DNS — Servidores sem filtragem
+### AdGuard DNS - Servidores sem filtragem
 
 
 IPv4
@@ -133,7 +133,7 @@ IPv6
 DoH
 <https://unfiltered.adguard-dns.com/dns-query>
 
-### AdGuard DNS — Proteção familiar
+### AdGuard DNS - Proteção familiar
 
 Bloqueia anúncios, rastreadores, conteúdo adulto e ativa a Pesquisa Segura / Modo seguro quando possível.
 
@@ -154,4 +154,3 @@ DoH
 
 Admin Console Google Workspace (suporte)
 <https://support.google.com/a/answer/6214622>
-

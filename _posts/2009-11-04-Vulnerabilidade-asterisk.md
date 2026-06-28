@@ -23,18 +23,18 @@ Bom mãos a obra!
 
 Se vc tem asterisk 1.4 mas inferior a 1.4.24.1 primeiro vamos atualizar ele.
 
-```bash
+``` bash
 cd /tmp
 wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.26.2.tar.gz
 ```
 
 Descompactei
-```bash
+``` bash
 tar -xvf asterisk-1.4.26.2.tar.gz
 ```
 
 Compilei
-```bash
+``` bash
 cd asterisk-1.4.26.2
 ./configure
 make
@@ -42,14 +42,14 @@ make
 
 Copiei só o arquivo modificado pra solucionar o problema.
 
-```bash
+``` bash
 cp /tmp/asterisk-1.4.26.2/channels/chan_sip.so /usr/lib/asterisk/modules/chan_sip.so
 ```
 
 
 Agora vamos pedir pra ele se comportar igual com ramais existentes e ramais não existentes.
 
-```bash
+``` bash
 cd /etc/asterisk
 echo alwaysauthreject=yes>> sip_general_custom.conf
 ```

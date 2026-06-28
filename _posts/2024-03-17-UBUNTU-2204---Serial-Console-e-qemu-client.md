@@ -1,3 +1,8 @@
+---
+tags:
+  - vm
+  - proxmox
+---
 ### QEMU AGENT
 
 Instala o cliente qemu lembre de ativar na options da VM
