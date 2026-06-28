@@ -1,11 +1,11 @@
 
-Fazer um pix parece muito fácil não é?
+Fazer um PIX parece muito fácil, não é?
 1. Destravar o celular com Biometria
 2. Tem que achar o app do banco
 3. Logar no app com senha do app
-4. Ir na área de pix
-5. Escolher pagar pix com QR-Code
-6. Mirar a câmera no QR-Code
+4. Ir na área de PIX
+5. Escolher pagar PIX com QRCode
+6. Mirar a câmera no QRCode
 7. Aguardar o foco da câmera funcionar
 8. Fazer alguns passos de confirmação
 9. Digitar sua senha de pagamento
@@ -24,10 +24,10 @@ Mas se der para fazer PIX por aproximação?
 
 Não é tão fácil como débito, mas dá para pagar dando algum benefício para o vendedor.
 Primeiro compre uma TAG adesiva ou um cartão NFC.
-Baixe o app NFC Tool: <https://play.google.com/store/apps/details?id=com.wakdev.wdnfc>
+Baixe o app NFC Tools: <https://play.google.com/store/apps/details?id=com.wakdev.wdnfc>
 Usando o app do seu banco crie um pagamento PIX com ou sem valor, com identificação se preferir. Copie o PIX "PIX Copia e Cola".
-No site <https://www.urlencoder.org/pt/> você pode codificar o seu PIX no formato "URL Encoder". Isso vai remover espaços e substituir por "%20" e modificar algum caráter especial se existir.
-Agora, no NFC Tool, você vai gravar no cartão uma URL Personalizada. Digite:
+No site <https://www.urlencoder.org/pt/> você pode codificar o seu PIX no formato "URL Encoder". Isso vai remover espaços e substituir por "%20" e modificar algum caractere especial, se existir.
+Agora, no NFC Tools, você vai gravar no cartão uma URL Personalizada. Digite:
 
 pix://localhost?qr=
 Cole seu PIX codificado, vai ficar algo assim:

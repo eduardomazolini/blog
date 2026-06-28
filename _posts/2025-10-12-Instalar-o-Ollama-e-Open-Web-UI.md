@@ -1,11 +1,11 @@
 ---
 ---
 
-## Instação do podman
+## Instalação do podman
 
-O Docker poderia ser usado mas vou dar preferencia para o podman. Com isso podemos levantar as 2 aplicações de forma mais isolada do sistema base.
+O Docker poderia ser usado mas vou dar preferência para o podman. Com isso podemos levantar as 2 aplicações de forma mais isolada do sistema base.
 
-IMPORTANTE! Portainer não sobe o stack tem que ser por linha de comando. Docker da problema parece que estamos vivendo uma migração do modo OCI de trabalhar para o CDI. Não sei entedi certo.
+IMPORTANTE! Portainer não sobe o stack tem que ser por linha de comando. Docker dá problema parece que estamos vivendo uma migração do modo OCI de trabalhar para o CDI. Não sei se entendi certo.
   
   
     sudo apt update
@@ -14,9 +14,9 @@ IMPORTANTE! Portainer não sobe o stack tem que ser por linha de comando. Docker
 
 ## Para usar placa NVIDIA alguns passos são necessários
 
-Infelizmente isso tem que ser feito na maquina base do docker. Se ela for virtual os Drivers também devem ser instalados no Host também.
+Infelizmente isso tem que ser feito na máquina base do docker. Se ela for virtual os drivers também devem ser instalados no Host também.
 
-### instalação básica do drives da NVIDIA
+### Instalação básica dos drivers da NVIDIA
   
   
     sudo apt update

@@ -15,8 +15,8 @@ alert_text: "Conteúdo gerado por lógica Liquid"
 # Este é um post de exemplo em Markdown.
 
 Eu vou manter o exemplo abaixo. Quero lembrar quando publiquei este blog, usando essa tecnologia.
-Eu vim do Blogger e to migrando as postagens para cá.
-Eu usei favicon usando na dica do site deste thema.
+Eu vim do Blogger e tô migrando as postagens para cá.
+Eu configurei o favicon com base na dica do site deste tema.
 
 ![Meu favicon](/assets/img/edu.svg)
 
@@ -34,7 +34,7 @@ console.log("Olá, Mazolini!");
 ![Logo do Jekyll](/assets/img/jekyll.jpeg)
 
 
-# A seguir sintax liquid
+# A seguir, sintaxe Liquid
 
 ```liquid
 {% raw %}{% include alert-warning.md %}{% endraw %}

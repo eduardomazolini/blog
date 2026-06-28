@@ -3,7 +3,7 @@ O site do [Virt-Manager](https://virt-manager.org/) mostra que para instalar ele
 sudo apt install virt-manager
 ```
 
-Mas você precisa digitar a senha para fazer sudo cada vez que abre ao menos que coloque seus usuários no grupo libvirt:
+Mas você precisa digitar a senha para fazer sudo cada vez que abre a menos que coloque seu usuário no grupo libvirt:
 ```
 sudo usermod -aG libvirt aluno
 sudo usermod -aG libvirt $USER
@@ -14,8 +14,8 @@ Se quiser acessar remoto vai precisar de um netcat com opção -U:
 sudo apt install netcat-openbsd
 ```
 
-Por fim você vai ficar feliz até voltar no outro dia e perceber que sua maquina não sobe mais por um erro de rede.
-Pra resolver isso ative a rede default e marque para inicio automatico:
+Por fim você vai ficar feliz até voltar no outro dia e perceber que sua máquina não sobe mais por um erro de rede.
+Pra resolver isso ative a rede default e marque para início automático:
 
 Liste o estado atual:
 ```
@@ -37,7 +37,7 @@ Configure para sempre iniciar:
 sudo virsh net-autostart default
 ```
 
-Confrime se a rede default foi marcada para auto-iniciar:
+Confirme se a rede default foi marcada para auto-iniciar:
 ```
 sudo virsh net-list --all
 ```

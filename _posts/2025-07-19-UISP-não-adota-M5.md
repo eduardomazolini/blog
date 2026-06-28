@@ -83,10 +83,10 @@ docker cp ssl-ciphers.conf.bkp nginx-proxy-manager-app-1:/etc/nginx/conf.d/inclu
 ```
 docker restart nginx-proxy-manager-app-1
 
->Atenção o comando para baixar os arquivos originais eu não listei pq são arquivos pequenos cada um pode fazer como quiser. O importante é olhar o original.
+> Atenção: o comando para baixar os arquivos originais eu não listei porque são arquivos pequenos, cada um pode fazer como quiser. O importante é olhar o original.
 {: .prompt-danger }  
 
->Na nova versão do NPM é possível cria certificados RSA, isso pode ser selecionado, não precisa mais editar o `/etc/letsencrypt.ini`
+> Na nova versão do NPM é possível criar certificados RSA, isso pode ser selecionado, não precisa mais editar o `/etc/letsencrypt.ini`.
 {: .prompt-warning }
 
 ## Testando a configuração
@@ -107,7 +107,7 @@ Hoje existem certificados:
 > M5 só aceita RSA
 {: .prompt-warning }
 
-> Agora o Nginx Proxy Manager permite escolher RSA individualmente e apesar do ECDSA ser o padrão.
+> Agora o Nginx Proxy Manager permite escolher RSA individualmente, apesar do ECDSA ser o padrão.
 {: .prompt-tip }
 
 #### Troca de chaves
@@ -116,18 +116,18 @@ Hoje existem certificados:
 
 ##### Estático
 
-RSA que é chamada de estática pois usa o certificado se ele for comprometido pode usar para des-criptografar comunicações antigas  
+RSA que é chamada de estática pois usa o certificado. Se ele for comprometido, pode ser usado para descriptografar comunicações antigas.  
 
->Quando um DHE é ativado essa opção é desativada.
+> Quando um DHE é ativado essa opção é desativada.
 {: .prompt-tip }
 
 ##### DHE (Diffie-Hellman Ephemeral)
 
-Precisa de dhparam que é estático publico, mas é único.
-Para gerar a chave um segundo numero aleatório é gerado.
-No inicio o dhparam era igual pra todos, então as contas feitas a partir dele poderiam ser pré-calculadas por uma entidade poderosa, agora que são únicos isso fica impossível.
+Precisa de dhparam que é estático público, mas é único.
+Para gerar a chave, um segundo número aleatório é gerado.
+No início o dhparam era igual para todos, então as contas feitas a partir dele poderiam ser pré-calculadas por uma entidade poderosa. Agora que são únicos, isso fica impossível.
 
->Não é oferecida pelo M5 na conexão, mas ele aceita como cliente. Lembre de criar e especificar o dhparam.
+> Não é oferecida pelo M5 na conexão, mas ele aceita como cliente. Lembre de criar e especificar o dhparam.
 {: .prompt-tip }
 
 ##### ECDHE (Elliptic Curve DHE)
@@ -150,10 +150,10 @@ Um formato bem moderno pós-quântico compatível com NIST.
 
 ##### AES
 
-O algoritmo com tamanho da chave (128 / 256 bits), bom para CPUs modernas que tem instruções especificas para isso (AES-NI).
+O algoritmo com tamanho da chave (128 / 256 bits), bom para CPUs modernas que têm instruções específicas para isso (AES-NI).
 Modos de operação **GCM** (Rápido/Paralelo) ou **CBC** (Antigo/Legado).
 
->O único aceito pelos nossos equipamentos.
+> O único aceito pelos nossos equipamentos.
 {: .prompt-tip }
 
 ##### ChaCha20
@@ -167,7 +167,7 @@ Feito para ser rápido via software. O modo é sempre **Poly1305**
 
 Obsoleto.
 
-##### SHA-256 também conhecido com SHA-2
+##### SHA-256 também conhecido como SHA-2
 
 Padrão atual.
 

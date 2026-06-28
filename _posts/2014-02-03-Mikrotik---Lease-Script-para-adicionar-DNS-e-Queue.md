@@ -2,17 +2,17 @@
 tags: [dhcp, dns, mikrotik, queue]
 ---
 
-No mikrotik o DHCP Server não adiciona o hostname no DNS, melhor dizendo o DNS não tem reconhece a solicitação para publicar um nome.
-Bom eu em casa tenho alguns equipamentos com ip fixo, uns fixo no servidor outros por amarração de mac, seja como for eu precisei adicionar os hostnames manualmente no DNS.
-Hoje precisei acessar um PC sem ip fixo, pelo nome **dns** e ai surgiu esse post.
-Em uma empresa também surgiu a necessidade de criar uns gráficos de consumo de banda e a função de gráficos de **queue** me serve perfeitamente, até pela restrição de acesso a informação, já que pode restringir somente ao target visualizar o gráfico.
+No Mikrotik, o DHCP Server não adiciona o hostname no DNS, melhor dizendo, o DNS não reconhece a solicitação para publicar um nome.
+Bom, eu em casa tenho alguns equipamentos com IP fixo, uns fixos no servidor, outros por amarração de MAC. Seja como for, eu precisei adicionar os hostnames manualmente no DNS.
+Hoje precisei acessar um PC sem IP fixo pelo nome DNS, e aí surgiu esse post.
+Em uma empresa também surgiu a necessidade de criar uns gráficos de consumo de banda, e a função de gráficos de **queue** me serve perfeitamente, até pela restrição de acesso à informação, já que se pode restringir somente ao target visualizar o gráfico.
 
-Para solucionar isso o melhor foi usar a opção de script dentro da configuração do DHCP Server, o campo "lease script".
-Quando é registrado um novo host adiciona o hostname com domínio no DNS e cria uma fila.
-Quando o registro é removido do lease remove a entrada do DNS e desativa a fila.
-Por que desativar a fila? Para não perder o histórico da maquina. Quando o pc volta com outro ip só é atualizado o target.
-Se mudar o ip do host vai ter target duplicado? Sim, mas a fila vai estar inativa.
-Se o hostname for nulo? Eu checo isso(xx=xx), no caso optei não fazer nada.
+Para solucionar isso, o melhor foi usar a opção de script dentro da configuração do DHCP Server, o campo "lease script".
+Quando é registrado um novo host, adiciona o hostname com domínio no DNS e cria uma fila.
+Quando o registro é removido do lease, remove a entrada do DNS e desativa a fila.
+Por que desativar a fila? Para não perder o histórico da máquina. Quando o PC volta com outro IP, só é atualizado o target.
+Se mudar o IP do host, vai ter target duplicado? Sim, mas a fila vai estar inativa.
+Se o hostname for nulo? Eu checo isso (xx=xx), no caso optei por não fazer nada.
 
 O Script está abaixo:
 ```
