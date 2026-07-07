@@ -58,6 +58,7 @@ podman run --rm -it \
     bundle install && \
     bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling
   "
+
 podman run --rm -it \
   -p 4000:4000 \
   -v "$PWD:/srv/jekyll:Z" \
