@@ -1,5 +1,7 @@
 ---
 order: 7
+tags:
+  - btrfs
 ---
 # BTRFS - Particionando
 
@@ -155,7 +157,6 @@ TARGET       SOURCE              FSTYPE OPTIONS
 ├─/var/log   /dev/vda4[/@log]    btrfs  rw,relatime,discard=async,space_cache=v2,subvolid=258,subvol=/@log
 └─/var/cache /dev/vda4[/@cache]  btrfs  rw,relatime,discard=async,space_cache=v2,subvolid=259,subvol=/@cache
 ```
-
 
 ## Limpeza dos dados
 
