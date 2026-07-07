@@ -1,6 +1,5 @@
 ---
 order: 1
-parent: series/debian
 ---
 
 # Alt+Tab
