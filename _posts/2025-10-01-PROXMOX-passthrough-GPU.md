@@ -1,7 +1,9 @@
 ---
-tags: [proxmox]
+tags:
+  - proxmox
+  - nvidia
+  - AI
 ---
-
 No Servidor Proxmox
 
 nano /etc/default/grub

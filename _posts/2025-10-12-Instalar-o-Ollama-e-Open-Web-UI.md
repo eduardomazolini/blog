@@ -1,6 +1,6 @@
 ---
+tags: AI
 ---
-
 ## Instalação do podman
 
 O Docker poderia ser usado mas vou dar preferência para o podman. Com isso podemos levantar as 2 aplicações de forma mais isolada do sistema base.
