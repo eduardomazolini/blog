@@ -1,5 +1,7 @@
 ---
-tags: AI
+tags:
+  - AI
+  - ollama
 ---
 ## Instalação do podman
 
@@ -17,12 +19,19 @@ IMPORTANTE! Portainer não sobe o stack tem que ser por linha de comando. Docker
 Infelizmente isso tem que ser feito na máquina base do docker. Se ela for virtual os drivers também devem ser instalados no Host também.
 
 ### Instalação básica dos drivers da NVIDIA
-  
-  
-    sudo apt update
-    sudo apt install nvidia-driver linux-headers-$(uname -r)
 
-### Instalar nvidia container toolkit
+O pacote `nvidia-driver` esta no repositório `non-free`.
+Verifique o `/etc/apt/sources.list.d/debian.sources` veja se esta como abaixo:
+```
+Components: main contrib non-free non-free-firmware
+```
+
+``` bash
+apt update
+apt install nvidia-driver linux-headers-$(uname -r)
+```
+
+### Instalar nvidia-container-toolkit
 
 Fonte: <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation>
   
@@ -103,15 +112,16 @@ Esse é o modo nvidia-container-toolkit
 ## Instalar Ollama
   
 ```
+# modo nvidia-container-toolkit
     podman run -d -v ollama:/root/.ollama \
         --gpus=all \
         --security-opt=label=disable \
         -p 11434:11434 \
+        --restart always \
         --name ollama \
-        --security-opt=label=disable \
         ollama/ollama
   
-  
+# modo CDI
     podman run -d -v ollama:/root/.ollama \
         --device nvidia.com/gpu=0 \
         --security-opt=label=disable \
@@ -119,6 +129,14 @@ Esse é o modo nvidia-container-toolkit
         --restart always \
         --name ollama \
         docker.io/ollama/ollama
+        
+# sem nvidia
+    podman run -d -v ollama:/root/.ollama \
+        -p 11434:11434 \
+        --restart always \
+        --name ollama \
+        docker.io/ollama/ollama
+
 ```
 
 ## Instalar Open WebUI
