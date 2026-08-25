@@ -132,22 +132,22 @@ Como disse o básico só o que envolve criar a interface.
 Arquivo wireguard de **exemplo** use o gerado por **você**!!!
 
 
-> # routing-id: 0x000000
-> [Interface]
-> PrivateKey = chave+privada
-> Address = 2606:4700:110:86cb:4b9d:6889:fe5e:dfee/128
-> Address = 100.96.0.1/32
-> DNS = 1.1.1.1
-> DNS = 2606:4700:4700::1111
-> MTU = 1420
-> 
-> [Peer]
-> PublicKey = bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-> AllowedIPs = ::/0
-> AllowedIPs = 0.0.0.0/0
-> Endpoint = engage.cloudflareclient.com:2408
-> 
-> 
+```
+# routing-id: 0x000000
+[Interface]
+PrivateKey = chave+privada
+Address = 2606:4700:110:86cb:4b9d:6889:fe5e:dfee/128
+Address = 100.96.0.1/32
+DNS = 1.1.1.1
+DNS = 2606:4700:4700::1111
+MTU = 1420
+
+[Peer]
+PublicKey = bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+AllowedIPs = ::/0
+AllowedIPs = 0.0.0.0/0
+Endpoint = engage.cloudflareclient.com:2408
+```
 
 Criar a interface wireguard
 
