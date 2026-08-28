@@ -2,6 +2,8 @@
 tags: [cloudflare, wireguard, vpn]
 ---
 
+> **ATUALIZAÇÃO (2026-08-27):** para o fluxo atual (Cloudflare Mesh via `wgcf-connector`), veja [Cloudflare Mesh + Mikrotik — atualização]({% post_url 2026-08-27-Cloudflare-Mesh-Mikrotik-atualizacao %}).
+
 A CloudFlare oferece o serviço o serviço [Zero Trust](https://one.dash.cloudflare.com) que é gratuito até certo ponto e muito útil.
 
 O que é o Zero Trust, como o nome diz é não confiar em ninguém então o usuário tem que estar em uma VPN e os Servidores também, as redes também.

@@ -1,6 +1,8 @@
 ---
 ---
 
+> **ATUALIZAÇÃO (2026-08-27):** para o fluxo atual (Cloudflare Mesh via `wgcf-connector`), veja [Cloudflare Mesh + Mikrotik — atualização]({% post_url 2026-08-27-Cloudflare-Mesh-Mikrotik-atualizacao %}).
+
 Eu uso warp-cli em um container docker pra criar as conexões e com os comando abaixo da pra printar os valores dos JSON dos arquivos de configuração.
 
 Lembre de não remover ou desconectar por linha de comando ou esses valores vão se tonar inválidos. 
