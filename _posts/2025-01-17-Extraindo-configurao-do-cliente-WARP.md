@@ -1,4 +1,9 @@
 ---
+tags:
+  - cloudflare
+  - wireguard
+  - vpn
+  - warp-cli
 ---
 
 > **ATUALIZAÇÃO (2026-08-27):** para o fluxo atual (Cloudflare Mesh via `wgcf-connector`), veja [Cloudflare Mesh + Mikrotik — atualização]({% post_url 2026-08-27-Cloudflare-Mesh-Mikrotik-atualizacao %}).

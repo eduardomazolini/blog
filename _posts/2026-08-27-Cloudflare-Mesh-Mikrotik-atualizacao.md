@@ -1,5 +1,10 @@
 ---
-tags: [cloudflare, wireguard, vpn, docker, mikrotik]
+tags:
+  - cloudflare
+  - wireguard
+  - vpn
+  - docker
+  - mikrotik
 ---
 
 O **Cloudflare Mesh** (antigo WARP Connector) é uma VPN site-to-site gratuita da
