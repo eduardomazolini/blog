@@ -1,4 +1,11 @@
 ---
+tags:
+  - linux
+  - incus
+  - cloud-init
+  - vm
+  - lxc
+  - container
 ---
 
 Pré Instalação do Incus
@@ -60,25 +67,27 @@ Usar os dados salvos da última configuração
 Geração da senha para o cloud-init
   
   
-    python3 -c 'import crypt; print(crypt.crypt("suasenha", crypt.mksalt(crypt.METHOD_SHA512)))'
+    sudo apt install whois # O `mkpasswd` vem no pacote `whois` que não é instalado por padrão
+    mkpasswd -m yescrypt "suasenha"
   
 
-Configuração do cloud-init
-  
-  
-    #cloud-config
-    # Adicione este bloco fora da seção 'users'
-    ssh_pwauth: true  # Permite senha se a chave falhar (opcional)
-    package_update: true
-    packages:
-      - openssh-server
-    users:
-      - name: emazolini
-        groups: sudo
-        shell: /bin/bash
-        sudo: ALL=(ALL) NOPASSWD:ALL
-        lock_passwd: false
-        passwd: "$6$7sEVbA2QElMP.e7c$5w.mboIKzN8BnkD.DuBjtHqbm4m9fQUct1ZSELl3g8DjbKDJetD5Jt6RrgHuuUSavQh.oHdzjxr79z39jLNpF1"
-        ssh_authorized_keys:
-          - ssh-rsa AAAAB3Nza...usuario@notebook
-  
+Configuração do cloud-init em `User data` no profile ou na instância.
+> **Atenção**: a seção `cloud-init.user-data` definida na `instância` substitui a do `profile` — não há mesclagem.
+
+```
+#cloud-config
+ssh_pwauth: true  # Permite senha se a chave falhar (opcional)
+package_update: true
+packages:
+    - openssh-server
+users:
+    - name: emazolini
+      groups: sudo
+      shell: /bin/bash
+      sudo: ALL=(ALL) NOPASSWD:ALL
+      lock_passwd: false
+      passwd: "$y$j9T$...troque-pelo-hash-da-sua-senha"
+      ssh_authorized_keys:
+        - ssh-rsa AAAAB3Nza...troque-pela-sua-chave usuario@notebook
+```
+
